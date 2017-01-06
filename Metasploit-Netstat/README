@@ -1,9 +1,6 @@
-Some useful PERL resources.
-
-Metasploit-Netstat:
-  It is often prudent to include netstat dumps as part of automatic Metasploit
-  post-exploitation loot that is collected upon establishing a callback.
-  This script sifts through the large amount of information in the loot file(s),
-  scrapes out the netstat information, analyzes each individual connection, 
-  and prints out information that can be very useful when building a target 
-  package.  The output is formatted to allow for easy parsing.
+It is often prudent to include netstat dumps as part of automatic Metasploit
+post-exploitation loot that is collected upon establishing a callback.
+This script sifts through the large amount of information in the loot file(s),
+scrapes out the netstat information, analyzes each individual connection, 
+and prints out information that can be very useful when building a target 
+package.  The output is formatted to allow for easy parsing.
