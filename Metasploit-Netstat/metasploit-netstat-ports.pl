@@ -19,24 +19,24 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-#Summary:
-#  It is often prudent to include netstat dumps as part of automatic Metasploit
-#  post-exploitation loot that is collected upon establishing a callback.
-#  This script sifts through the large amount of information in the loot file(s),
-#  scrapes out the netstat information, analyzes each individual connection, 
-#  and prints out information that can be useful when building a target package.
-#  The output is formatted to allow for easy parsing.
+# Summary:
+#   It is often prudent to include netstat dumps as part of automatic Metasploit
+#   post-exploitation loot that is collected upon establishing a callback.
+#   This script sifts through the large amount of information in the loot file(s),
+#   scrapes out the netstat information, analyzes each individual connection, 
+#   and prints out information that can be useful when building a target package.
+#   The output is formatted to allow for easy parsing.
 
-#Usage:
-# perl metasploit-netstat-ports.pl <file with netstat output> <port of interest>
+# Usage:
+#  perl metasploit-netstat-ports.pl <file with netstat output> <port of interest>
 
-#Output:
-# 1. A list of every client that connected to a remote resource on that port
-# 2. A list of every server that accepted a connection on that port
-# 3. The number of times each client connected or each server accepted
-#    a connection on that port
-# 4. A breakdown of the top 5 noisiest clients and servers talking on that
-#    port 
+# Output:
+#  1. A list of every client that connected to a remote resource on that port
+#  2. A list of every server that accepted a connection on that port
+#  3. The number of times each client connected or each server accepted
+#     a connection on that port
+#  4. A breakdown of the top 5 noisiest clients and servers talking on that
+#     port 
 
 
 die("Usage: $0 <input file> <port>\n") unless ( @ARGV > 1);
