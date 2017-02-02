@@ -36,7 +36,9 @@
 # 3. The client and server ports used in the connection
 
 
-$INPUT_FILE = "src/nightmare_spray.txt";
+die("Usage: $0 <input file>\n") unless (@ARGV > 0);
+my ($INPUT_FILE, $PORT) = @ARGV;
+
 open(FILE, "< $INPUT_FILE") or die ("Can't open $INPUT_FILE\n");
 # Print connections
 while ($host = <FILE>)

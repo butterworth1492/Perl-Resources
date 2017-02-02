@@ -39,10 +39,9 @@
 #     port 
 
 
-die("Usage: $0 <input file> <port>\n") unless ( @ARGV > 1);
+die("Usage: $0 <input file> <port>\n") unless (@ARGV > 1);
 my ($INPUT_FILE, $PORT) = @ARGV; 
 
-#$INPUT_FILE = "src/nightmare_spray.txt";
 open(FILE, "< $INPUT_FILE") or die ("Can't open $INPUT_FILE\n");
 
 my %clients = {};
@@ -54,6 +53,8 @@ while ($host = <FILE>)
     if ($host =~ /\s+(ESTABLISHED|CLOSE_WAIT|TIME_WAIT)\s+([^\s]+)\s+(\d+)\s+([^\s]+)\s+(\d+)$/)
       {
         my ($host1,$port1,$host2,$port2) = ($2,$3,$4,$5);
+
+        # Since input is scraped from netstat, IPs are assumed to be valid and are not checked here.
         next if ($host1 !~ /((\d{1,3})\.){3}(\d{1,3})/);  # Some IPs aren't complete 
         $re = qr/$PORT/;
         if ($port1 =~ /^${re}$/)    # I am the server
