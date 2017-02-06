@@ -1,0 +1,4 @@
+Enumerating domain users can be a challenge as there can sometimes be
+*too* much information.  This script consumes a JSON-formatted LDAP a
+dump file and parses the information out into readable categories
+for LDAP users, roles, and groups.
